@@ -1,45 +1,26 @@
-# This workflow will publish a package to npmjs when a release is released
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-
-name: Publish Package
-
+name: 🚀 Publish
+permissions:
+  contents: read
+  id-token: write
 on:
+  workflow_dispatch:
   release:
     types: [released]
-
-env:
-  NODE_VERSION: 22
-
 jobs:
-  publish-npm:
+  publish:
+    name: 📦 Publish to npm
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
     steps:
-      - name: Checkout
+      - name: 📂 Checkout
         uses: actions/checkout@v6
 
-      - name: Enable corepack
-        run: corepack enable
+      - name: 🛠️ Setup
+        uses: ./.github/actions/setup
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Setup Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v6
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
-          registry-url: https://registry.npmjs.org/
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build
+      - name: 🔨 Build
         run: pnpm build
 
-      - name: Publish to registry
+      - name: 🚀 Publish to registry
         run: pnpm publish --provenance --no-git-checks --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
