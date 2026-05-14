@@ -1,0 +1,21 @@
+name: 🛠️ Setup
+description: Enable Corepack, set up pnpm and Node.js, and install dependencies.
+runs:
+  using: composite
+  steps:
+    - name: 🔧 Enable Corepack
+      shell: bash
+      run: corepack enable
+
+    - name: 📦 Setup pnpm
+      uses: pnpm/action-setup@v6
+
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: lts/*
+        cache: pnpm
+
+    - name: 📥 Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile
