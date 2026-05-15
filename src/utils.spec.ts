@@ -14,29 +14,23 @@ describe('assertIsDefined', () => {
 });
 
 describe('getPackageName', () => {
-	it.concurrent(
-		'should return the package name from package.json',
-		async () => {
-			expect(getPackageName()).toBe('gatsby-plugin-component-to-image');
-		},
-	);
+	it.concurrent('should return the package name from package.json', async () => {
+		expect(getPackageName()).toBe('gatsby-plugin-component-to-image');
+	});
 });
 
 describe('prettify', () => {
-	it.concurrent(
-		'should format an object as a human-readable string',
-		async () => {
-			const obj = {
-				name: 'Timmy',
-				size: 'chonky',
-				color: 'orange',
-			};
-			const expectedOutput = `{
+	it.concurrent('should format an object as a human-readable string', async () => {
+		const obj = {
+			name: 'Timmy',
+			size: 'chonky',
+			color: 'orange',
+		};
+		const expectedOutput = `{
   "name": "Timmy",
   "size": "chonky",
   "color": "orange"
 }`;
-			expect(prettify(obj)).toBe(expectedOutput);
-		},
-	);
+		expect(prettify(obj)).toBe(expectedOutput);
+	});
 });
