@@ -40,7 +40,10 @@
 		"build": "tsc",
 		"watch": "tsc --watch",
 		"clean": "rimraf lib coverage *.tgz",
-		"test": "jest"
+		"test": "jest",
+		"lint": "biome lint",
+		"lint:write": "biome lint --write",
+		"format:write": "biome format --write"
 	},
 	"peerDependencies": {
 		"gatsby": "^5.0.0-next"
@@ -50,7 +53,7 @@
 		"puppeteer": "^22.9.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.7.3",
+		"@biomejs/biome": "2.4.15",
 		"@jest/globals": "^29.7.0",
 		"@tsconfig/node20": "^20.1.4",
 		"@types/express": "^4.17.21",
