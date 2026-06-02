@@ -4,7 +4,7 @@ Thank you for your interest in gatsby-plugin-component-to-image! This document o
 
 ## Reporting Issues
 
-Not a coder? See the [support resources](https://github.com/twocaretcat/.github/blob/main/docs/SUPPORT.md) for information on how to:
+Not a coder? See the [support resources](https://github.com/caret-collective/.github/blob/main/docs/SUPPORT.md) for information on how to:
 
 - request features
 - report bugs
@@ -75,7 +75,7 @@ By contributing to this project, you agree that your contributions will be licen
 [Biome.js]: https://biomejs.dev/
 [Git]: https://git-scm.com/
 [Node.js]: https://nodejs.org/
-[open an issue]: https://github.com/twocaretcat/gatsby-plugin-component-to-image/issues
+[open an issue]: https://github.com/caret-collective/gatsby-plugin-component-to-image/issues
 [Pnpm]: https://pnpm.io/
 [semantic versioning]: https://semver.org/
 [TypeScript]: https://www.typescriptlang.org/
